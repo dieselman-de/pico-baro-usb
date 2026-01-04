@@ -2,11 +2,16 @@
 Reading Pressure Sensor DPS310 from Raspberry Pi Pico (C Language)
 
 ## Keywords
-Barometric Sensor, Temperature Sensor, DPS310
+Barometric Sensor, Temperature Sensor, DPS310  
 Raspberry Pi Pico RP2040
 
+## Hardware
+Whilst you could physically connect the Pico and the Baro-/Temp-Sensor in quite many ways, there is a "solder free" option by using (buying) this hardware from [Seeed Studio](https://www.seeedstudio.com):
+ - [DPS310 Ready-to-use-PCB](https://wiki.seeedstudio.com/Grove-High-Precision-Barometric-Pressure-Sensor-DPS310)
+ - [Grove Shield for Pi Pico](https://wiki.seeedstudio.com/Grove-Starter-Kit-for-Raspberry-Pi-Pico)
+
 ## Preconditions for Building
-You should have the "Raspberry Pi Pico SDK" installed on your computer. Installation and "First Steps" are well described in the official Documentation:  
+You should have the "**Raspberry Pi Pico SDK**" installed on your computer. Installation and "First Steps" are well described in the official Documentation:  
 [Getting Started with Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)  
 The instructions below are assuming cross-compilation/build on a "Linux" computer (i.e. a "Linux Host"), but instructions for Windows are as well contained in that document above.
 
@@ -17,11 +22,11 @@ Usually, during SDK Installation you'll have created a folder named `pico`. Ther
 This method will automatically create a new sub-folder `pico-baro-usb` and download all the files from repository  (i.e. including License-File and this README)
 
 Alternatively (e.g. if you don't want to use `git clone`) you can create a folder on your own and download at least these two files:
- - baro-usb.c
- - CMakeLists.txt
+ - **baro-usb.c**
+ - **CMakeLists.txt**
 
 ## Preparing for Build
-As described in chapter 8 of "[Getting Started with Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)", you'll have to copy the `pico_sdk_import.cmake` file into the very same project-folder, where the two files above reside. If you installed the SDK and this project's code in the usual way, this can be handled like this:  
+As described in chapter 8 of "[Getting Started with Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)", you'll have to copy the `pico_sdk_import.cmake` file into the very same project-folder, where the two files above reside. If you installed the SDK and this project's code in the usual way, this can be accomplished like this:  
 `cp ../pico-sdk/external/pico_sdk_import.cmake .`
 
 ## Creating Makefile with cmake
